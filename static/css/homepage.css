@@ -330,7 +330,29 @@
     transition: transform 0.7s ease, box-shadow 0.7s ease;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 485px) {
+    
+    .servicos-topo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .servicos-topo h2 {
+        font-size: 1.8rem;
+    }
+
+    .servicos-container {
+        flex-direction: column;
+    }
+
+    .servico-card {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 485px) and (max-width: 768px) {
     
     .servicos-topo {
         flex-direction: row;
@@ -347,5 +369,146 @@
     .servico-card {
         width: 100%;
         min-width: 100%;
+    }
+}
+
+.profissionais-section {
+    padding: 5rem 2rem;
+    background-color: var(--cor-branco);
+    width: 100%;
+    margin: 0 auto;
+}
+
+.profissionais-topo {
+    font-family: var(--fonte-principal);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.profissionais-topo h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--cor-preto);
+}
+
+.profissionais-container {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.profissional-card {
+    background-color: var(--cor-branco);
+    border: 1px solid var(--cor-cinza-border);
+    border-radius: 1rem;
+    padding: 2.5rem 1.5rem;
+    flex: 1;
+    min-width: 250px;
+    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+    font-family: var(--fonte-texto);
+}
+
+.profissional-card h3 {
+    font-family: var(--fonte-principal);
+}
+
+.avatar-wrapper {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.avatar-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profissional-card h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--cor-preto);
+    margin-bottom: 0.5rem;
+}
+
+.especialidade {
+    font-size: 0.95rem;
+    color: var(--cor-cinza-escuro);
+    margin-bottom: 1.2rem;
+    line-height: 1.4;
+}
+
+.avaliacao {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-top: auto;
+}
+
+.avaliacao i {
+    color: var(--cor-amarelo);
+    font-size: 1rem;
+}
+
+.nota {
+    font-weight: bold;
+    color: var(--cor-amarelo);
+    font-size: 1rem;
+}
+
+.votos {
+    color: var(--cor-cinza-escuro);
+    font-size: 0.85rem;
+}
+.profissional-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.7s ease, box-shadow 0.7s ease;
+}
+
+@media (min-width: 185px) and (max-width: 485px) {
+    .profissionais-topo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .profissionais-topo h2 {
+        font-size: 1.7rem;
+    }
+
+    .profissionais-container {
+        flex-direction: column;
+    }
+
+    .profissional-card {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 485px) and (max-width: 768px) {
+    .profissionais-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profissional-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .profissionais-topo h2{
+        font-size: 1.8rem;
     }
 }
