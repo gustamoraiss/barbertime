@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    <section class="hero-barbearia">
+        <div class="hero-conteudo">
+            <h1>Estilo e Tradição em<br>Cada Corte</h1>
+            <p>Experimente o melhor atendimento em barbearia com profissionais qualificados e ambiente premium.</p>
+            <button class="btn-agendar">
+                Agendar Horário <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </section>
+
+{% endblock %}

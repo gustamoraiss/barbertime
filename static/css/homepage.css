@@ -1,0 +1,120 @@
+.hero-barbearia {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                      url(https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1200&h=600&fit=crop&quot;);
+    background-size: cover;
+    height: 28rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 8em 5em;
+}
+
+.hero-conteudo {
+    max-width: 38em;
+    color: var(--cor-branco);
+}
+
+.hero-conteudo h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 0.6em;
+    line-height: 1.2;
+    font-family: var(--fonte-principal);
+}
+
+.hero-conteudo p {
+    font-size: 1.05em;
+    color: var(--cor-cinza-claro);
+    margin-bottom: 2.3em;
+    line-height: 1.6;
+    font-family: var(--fonte-texto);
+}
+
+.btn-agendar {
+    background-color: var(--cor-amarelo);
+    color: var(--cor-branco);
+    font-weight: bold;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 0.8rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-agendar:hover {
+    background-color: var(--cor-amarelo-hover);
+}
+
+.btn-agendar:active {
+    transform: scale(0.97); 
+    filter: brightness(0.9); 
+}
+
+.btn-agendar:active i {
+    transform: translateX(10px);
+}
+
+.btn-agendar i {
+    transition: transform 0.1s ease;
+}
+
+@media (max-width: 345px) {
+
+    .hero-conteudo h1 {
+        font-size: 1.65em;
+    }
+
+    .hero-conteudo p {
+        font-size: 0.75em;
+    }
+
+    .btn-agendar {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.7rem;
+    }
+}
+
+@media (min-width: 345px) and (max-width: 369px) {
+
+    .hero-conteudo h1 {
+        font-size: 1.8em;
+    }
+
+    .hero-conteudo p {
+        font-size: 0.85em;
+    }
+
+    .btn-agendar {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 369px) and (max-width: 565px) {
+    .hero-conteudo {
+        padding-left: 0;
+    }
+
+    .hero-conteudo h1 {
+        font-size: 2em;
+    }
+
+    .hero-conteudo p {
+        font-size: 0.9em;
+    }
+}
+
+@media (min-width: 565px) and (max-width: 655px) {
+    
+    .hero-conteudo h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-conteudo p {
+        font-size: 0.95em;
+    }
+}
