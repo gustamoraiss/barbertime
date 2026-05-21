@@ -1,0 +1,57 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--cor-preto);
+    padding: 2.5rem 2rem;
+
+}
+
+#logo{
+    font-size: 2rem;
+    text-decoration: none;
+    color: var(--cor-amarelo);
+    padding-left: 1rem ;
+}
+
+.nav-header{
+    font-size: 0.5rem;
+    margin: auto 0;
+
+}
+
+.nav-header a{
+    text-decoration: none;
+    color: var(--cor-cinza-claro);
+    padding: 0.5rem
+
+}
+
+.nav-header a:hover{
+    color: var(--cor-amarelo);
+
+}
+
+
+
+.btn-entrar{
+    padding: 0.5rem;
+    border-radius: 10px;
+    margin-right: 1rem;
+    border: solid;
+}
+
+.btn-entrar:hover{
+    background-color: var(--cor-cinza-claro);
+}
+
+.btn-agendar{
+    background-color: var(--cor-amarelo);
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--cor-preto);
+    color: var(--cor-branco);
+}
+
+.btn-agendar:hover{
+    background-color: var(--cor-amarelo-hover);
+}

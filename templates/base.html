@@ -4,12 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
     <title>Barbertime</title>
     {% block head %}
     {% endblock %}
 </head>
 <body>
     <header>
+         <a id="logo" href="">Barbearia Elite</a>
+        <nav class="nav-header">
+
+            <class="menu-hamburguer">
+                <a href="">Inicio</a>
+                <a href="">Serviços</a>
+                <a href="">Barbeiros</a>
+                <a href="">Contato</a>
+            
+
+        </nav>
+        <div class="btn-header">
+            <button class="btn-entrar">
+                <p>Entrar</p>
+            </button>
+
+            <button class="btn-agendar">
+                <p>Agendar Horario</p>
+            </button>
+
+        </div>
 
     </header>
 
