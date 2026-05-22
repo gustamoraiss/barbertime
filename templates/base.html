@@ -5,34 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Barbertime</title>
     {% block head %}
     {% endblock %}
 </head>
 <body>
     <header>
-         <a id="logo" href="">Barbearia Elite</a>
-        <nav class="nav-header">
-
-            <class="menu-hamburguer">
-                <a href="">Inicio</a>
-                <a href="">Serviços</a>
-                <a href="">Barbeiros</a>
-                <a href="">Contato</a>
-            
-
-        </nav>
-        <div class="btn-header">
-            <button class="btn-entrar">
-                <p>Entrar</p>
-            </button>
-
-            <button class="btn-agendar">
-                <p>Agendar Horario</p>
-            </button>
-
-        </div>
-
     </header>
 
     <main>
@@ -41,6 +20,52 @@
     </main>
 
     <footer>
+        <div class="footer-conteiner">
+            <div class="footer-barber">
+                <h3 class="title-footer">Barbearia Elite</h3>
+                <p>A melhor experiência em cortes e cuidados masculinos desde 2015.</p>
+
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/SEU_USUARIO" target="_blank" class="instagram-link" rel="noopener noreferrer">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/SUA_PAGINA" target="_blank" class="facebook-link" rel="noopener noreferrer">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="footer-resto">
+                <h3>Contato</h3>
+                 <p><i class="fa-solid fa-phone"></i> (11) 98765-4321</p>
+
+                    <p><i class="fa-solid fa-location-dot"></i> Av. Paulista, 1000 - São Paulo, SP</p>
+
+                <p><i class="fa-solid fa-clock"></i> Seg a Sáb: 9h às 20h</p>
+                
+                
+
+            </div>
+
+            <div class="footer-links">
+                <h3>Links Rápidos</h3>
+                <a href="">Serviços</a>
+                <a href="">Barbeiros</a>
+                <a href="">Agendar</a>
+                <a href="">Contato</a>
+
+            </div>
+
+
+        </div>
+
+        <div class="footer-copyright">
+            <p>&copy; 2026 Barbearia Elite. Todos os direitos reservados.</p>
+        </div>
+        
+
 
     </footer>
 </body>
