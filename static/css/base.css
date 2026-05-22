@@ -1,3 +1,6 @@
+/* ==========================================
+   HEADER
+   ========================================== */
 .navbar-header {
     background-color: var(--cor-preto);
     width: 100%;
@@ -18,7 +21,7 @@
 .navbar-logo a {
     font-size: 2.5rem;
     font-weight: bold;
-    color: var(--cor-amarelo-hover );
+    color: var(--cor-amarelo-hover);
     text-decoration: none;
     font-family: var(--fonte-logo);
 }
@@ -115,8 +118,158 @@
 .menu-checkbox { display: none; }
 .menu-icones { display: none; cursor: pointer; }
 
+/* ==========================================
+   FOOTER (RODAPÉ)
+   ========================================== */
+footer {
+    width: 100%;
+    background-color: var(--cor-preto);
+    /* Removido o position absolute para evitar que o rodapé flutue sobre o conteúdo */
+}
+
+.footer-conteiner {
+    justify-content: space-between;
+    display: flex;
+    align-items: flex-start;
+    padding: 2rem 0;
+}
+
+.title-footer {
+    color: var(--cor-amarelo);
+    margin-bottom: 1rem;
+}
+
+.footer-barber {
+    flex: 1; 
+    margin-left: 2rem;
+}
+
+.footer-barber p {
+    color: var(--cor-cinza-claro);
+    opacity: 0.7;
+}
+
+.social-icons {
+    margin: 1rem;
+}
+
+.instagram-link {
+    font-size: 2rem; 
+    color: var(--cor-branco); 
+    text-decoration: none;
+    display: inline-block;
+}
+
+.instagram-link:hover {
+    background-color: var(--cor-amarelo-hover);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(1.1);
+}
+
+.facebook-link {
+    font-size: 2rem; 
+    color: var(--cor-branco); 
+    text-decoration: none;
+    display: inline-block;
+    padding-left: 1rem;
+}
+
+.facebook-link:hover {
+    background-color: var(--cor-amarelo-hover);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(1.1);
+}
+
+.footer-resto {
+    color: var(--cor-cinza-claro);
+    margin: 0 2rem;
+    flex: 1;
+}
+
+.footer-resto p {
+    margin-top: 10px;
+    opacity: 0.7;
+}
+
+.footer-resto p i {
+    color: var(--cor-amarelo);
+    margin-right: 10px;
+    font-size: 1rem; /* Corrigido o espaço: "1 rem" para "1rem" */
+    width: 20px;
+    text-align: center;
+}
+
+.footer-links {
+    color: var(--cor-cinza-claro);
+    margin: 0 2rem;
+    flex: 1;
+}
+
+.footer-links a {
+    text-decoration: none;
+    padding: 5px 0;
+    color: var(--cor-cinza-claro);
+    display: block;
+    opacity: 0.7;
+}
+
+.footer-links a:hover {
+    color: var(--cor-amarelo-hover);
+    transform: translateX(5px);
+}
+
+.footer-copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin: 2rem 0 0 0; /* 2rem acima, 0 nas laterais e abaixo */
+    padding: 1.5rem 0;  /* Espaço interno controlado para respirar */
+    text-align: center;
+    width: 100%;
+}
+
+.footer-copyright p {
+    color: var(--cor-cinza-claro);
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+
+    footer {
+        position: relative; 
+    }
+
+    .footer-conteiner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem 1.5rem;
+    }
+
+    .footer-barber, 
+    .footer-resto, 
+    .footer-links {
+        margin: 0 0 2rem 0;
+        width: 100%;
+    }
+
+    .footer-links {
+        margin-bottom: 0;
+    }
+
+    .social-icons {
+        margin: 1rem 0 0 0;
+    }
+
+    .footer-copyright {
+        margin: 2rem 1.5rem 1.5rem 1.5rem; 
+    }
+}
+
+/* ==========================================
+   MEDIA QUERIES (RESPONSIVIDADE)
+   ========================================== */
 @media (max-width: 940px) {
-    
     .navbar-menu {
         margin: 0;
         width: 100%;
