@@ -10,29 +10,39 @@
     {% endblock %}
 </head>
 <body>
-    <header>
-         <a id="logo" href="">Barbearia Elite</a>
-        <nav class="nav-header">
-
-            <class="menu-hamburguer">
-                <a href="">Inicio</a>
-                <a href="">Serviços</a>
-                <a href="">Barbeiros</a>
-                <a href="">Contato</a>
+    <header class="navbar-header">
+        <div class="navbar-container">
             
+            <div class="navbar-logo">
+                <a href="#">Barbearia Elite</a>
+            </div>
 
-        </nav>
-        <div class="btn-header">
-            <button class="btn-entrar">
-                <p>Entrar</p>
-            </button>
+            <input type="checkbox" id="menu-toggle" class="menu-checkbox">
 
-            <button class="btn-agendar">
-                <p>Agendar Horario</p>
-            </button>
+            <label for="menu-toggle" class="menu-icones">
+                <span class="hamburger">≡</span>
+                <span class="fechar">✕</span>
+            </label>
+
+            <label for="menu-toggle" class="menu-overlay"></label>
+
+            <div class="navbar-links-wrapper">
+
+            <nav class="navbar-menu">
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Serviços</a></li>
+                    <li><a href="#">Barbeiros</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+
+            <div class="navbar-acoes">
+                <a href="#" class="btn-entrar">Entrar</a>
+                <a href="#" class="btn-agendar-nav">Agendar Horário</a>
+            </div>
 
         </div>
-
     </header>
 
     <main>
