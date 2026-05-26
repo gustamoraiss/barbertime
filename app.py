@@ -9,5 +9,9 @@ def home():
 def base():
     return render_template('base.html')
 
+@app.route('/agendamento')
+def agendamento():
+    return render_template('agendamento.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
