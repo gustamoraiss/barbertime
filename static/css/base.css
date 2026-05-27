@@ -134,6 +134,14 @@ footer {
     padding: 2rem 0;
 }
 
+.footer-conteiner h3 {
+    font-family: var(--fonte-principal);
+}
+
+.footer-conteiner p{
+    font-family: var(--fonte-texto);
+}
+
 .title-footer {
     color: var(--cor-amarelo);
     margin-bottom: 1rem;
@@ -222,7 +230,7 @@ footer {
 
 .footer-copyright {
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    margin: 2rem 0 0 0; /* 2rem acima, 0 nas laterais e abaixo */
+    margin: auto; /* 2rem acima, 0 nas laterais e abaixo */
     padding: 1.5rem 0;  /* Espaço interno controlado para respirar */
     text-align: center;
     width: 100%;
@@ -259,10 +267,6 @@ footer {
 
     .social-icons {
         margin: 1rem 0 0 0;
-    }
-
-    .footer-copyright {
-        margin: 2rem 1.5rem 1.5rem 1.5rem; 
     }
 }
 
