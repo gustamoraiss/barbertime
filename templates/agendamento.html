@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/agendamento.css') }}">
+{% endblock %}
+
+{% block content %}
+<form action="/agendamento" method="POST" class="agendamento">
+    <div class="agendamento-container">
+        <div class="secao-servicos">
+            <h2 class="secao-servicos-titulo">Escolha o serviço</h2>
+            <div class="secao-servicos-grid">
+
+                
+                <label for="servico1" class="card-servico">
+                    <input type="radio" id="servico1" name="servico" value="Corte Tradicional" class="input-escondido" required>
+                    <h3 class="servico-titulo">Corte Tradicional</h3>
+                    <p class="servico-descricao">Corte clássico com tesoura e máquina</p>
+                    <div class="servico-rodape">
+                        <p class="servico-rodape-preco">R$ 45</p>
+                        <p class="servico-rodape-tempo">40 min</p>
+                    </div>
+                </label>
+
+                
+                <label for="servico2" class="card-servico">
+                    <input type="radio" id="servico2" name="servico" value="Barba Completa" class="input-escondido" required>
+                    <h3 class="servico-titulo">Barba Completa</h3>
+                    <p class="servico-descricao">Barba desenhada com toalha quente</p>
+                    <div class="servico-rodape">
+                        <p class="servico-rodape-preco">R$ 35</p>
+                        <p class="servico-rodape-tempo">30 min</p>
+                    </div>
+                </label>
+
+            
+                <label for="servico3" class="card-servico">
+                    <input type="radio" id="servico3" name="servico" value="Combo Premium" class="input-escondido" required>
+                    <h3 class="servico-titulo">Combo Premium</h3>
+                    <p class="servico-descricao">Corte + Barba + Sobrancelha</p>
+                    <div class="servico-rodape">
+                        <p class="servico-rodape-preco">R$ 75</p>
+                        <p class="servico-rodape-tempo">60 min</p>
+                    </div>
+                </label>
+
+                
+                <label for="servico4" class="card-servico">
+                    <input type="radio" id="servico4" name="servico" value="Corte Infantil" class="input-escondido" required>
+                    <h3 class="servico-titulo">Corte Infantil</h3>
+                    <p class="servico-descricao">Corte especial para crianças até 12 anos</p>
+                    <div class="servico-rodape">
+                        <p class="servico-rodape-preco">R$ 35</p>
+                        <p class="servico-rodape-tempo">30 min</p>
+                    </div>
+                </label>
+
+                
+                <label for="servico5" class="card-servico">
+                    <input type="radio" id="servico5" name="servico" value="Pigmentação" class="input-escondido" required>
+                    <h3 class="servico-titulo">Pigmentação</h3>
+                    <p class="servico-descricao">Pigmentação de barba e cabelo</p>
+                    <div class="servico-rodape">
+                        <p class="servico-rodape-preco">R$ 55</p>
+                        <p class="servico-rodape-tempo">45 min</p>
+                    </div>
+                </label>
+
+                
+                <label for="servico6" class="card-servico">
+                    <input type="radio" id="servico6" name="servico" value="Design de Sobrancelha" class="input-escondido" required>
+                    <h3 class="servico-titulo">Design de Sobrancelha</h3>
+                    <p class="servico-descricao">Design e finalização com cera</p>
+                    <div class="servico-rodape">
+                        <p class="servico-rodape-preco">R$ 25</p>
+                        <p class="servico-rodape-tempo">20 min</p>
+                    </div>
+                </label>
+            </div>
+        </div>
+        <div class="secao-data">
+            <h2 class="secao-data-titulo">Escolha a data</h2>
+            <label for="data-agendamento" class="input-data-label">
+                <input type="date" id="data-agendamento" name="data" class="input-data" required  >
+            </label>
+        </div>
+    </div>
+</form>
+{% endblock %}
