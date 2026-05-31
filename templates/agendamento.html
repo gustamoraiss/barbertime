@@ -83,6 +83,54 @@
                 <input type="date" id="data-agendamento" name="data" class="input-data" required  >
             </label>
         </div>
+        <div class="secao-barbeiros">
+            <h2 class="secao-barbeiros-titulo">Escolha o barbeiro</h2>
+            <div class="barbeiros-cards">
+                <label for="barbeiro1" class="card-barbeiro">
+                    <div class="card-barbeiro-container">
+                        <input type="radio" id="barbeiro1" name="barbeiro" value="Carlos Silva" class="input-escondido" required>
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop" alt="Foto do Carlos Silva" class="barbeiro-imagem">
+                        <div class="barbeiros-card-textos">
+                            <h3 class="card-textos-titulo">Carlos Silva</h3>
+                            <p class="card-textos-descricao">Especialista em Cortes Clássicos</p>
+                        </div>
+                    </div>
+                </label>
+
+                <label for="barbeiro2" class="card-barbeiro">
+                    <div class="card-barbeiro-container">
+                        <input type="radio" id="barbeiro2" name="barbeiro" value="Roberto Santos" class="input-escondido" required>
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&h=300&fit=crop" alt="Foto do Roberto Santos" class="barbeiro-imagem">
+                        <div class="barbeiros-card-textos">
+                            <h3 class="card-textos-titulo">Roberto Santos</h3>
+                            <p class="card-textos-descricao">Mestre em Barbas e Degradês</p>
+                        </div>
+                    </div>
+                </label>
+
+                <label for="barbeiro3" class="card-barbeiro">
+                    <div class="card-barbeiro-container">
+                        <input type="radio" id="barbeiro3" name="barbeiro" value="André Costa" class="input-escondido" required>
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop" alt="Foto do André Costa" class="barbeiro-imagem">
+                        <div class="barbeiros-card-textos">
+                            <h3 class="card-textos-titulo">André Costa</h3>
+                            <p class="card-textos-descricao">Cortes Modernos e Pigmentação</p>
+                        </div>
+                    </div>
+                </label>
+
+                <label for="barbeiro4" class="card-barbeiro">
+                    <div class="card-barbeiro-container">
+                        <input type="radio" id="barbeiro4" name="barbeiro" value="Felipe Oliveira" class="input-escondido" required>
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop" alt="Foto do Felipe Oliveira" class="barbeiro-imagem">
+                        <div class="barbeiros-card-textos">
+                            <h3 class="card-textos-titulo">Felipe Oliveira</h3>
+                            <p class="card-textos-descricao">Especialista em Cortes Infantis</p>
+                        </div>
+                    </div>
+                </label>
+            </div>
+        </div>
     </div>
 </form>
 {% endblock %}

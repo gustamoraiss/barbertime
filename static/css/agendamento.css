@@ -80,6 +80,10 @@ body {
     color: var(--cor-amarelo);
 }
 
+.secao-data {
+    margin-bottom: 2em;
+}
+
 .secao-data-titulo {
     font-size: 1.5rem;
     margin-bottom: 1em;
@@ -102,6 +106,82 @@ body {
     transform: scale(1.2);
     transition: transform 0.2s;
 }
+
+.secao-barbeiros {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+}
+
+.barbeiros-card-textos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+}
+
+.barbeiros-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);;
+    gap: 1.5em;
+}
+
+
+.card-barbeiro {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid var(--cor-cinza-border);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 15px;
+    padding: 1em;
+    gap: 0.75em;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.card-barbeiro:hover {
+    border-color: var(--cor-amarelo);
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-barbeiro:has(.input-escondido:checked) {
+    border-color: var(--cor-amarelo);
+    background-color: var(--cor-amarelo-selecionado);
+}
+
+.card-barbeiro-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+    align-items: center;
+    text-align: center;
+}
+
+.barbeiro-imagem {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.card-textos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+}
+
+.card-textos-titulo {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card-textos-descricao {
+    font-size: 1rem;
+    color: var(--cor-cinza-escuro);
+}
+
 @media (max-width: 768px) {
     .agendamento {
         margin: 2em;
@@ -109,6 +189,10 @@ body {
 
     .secao-servicos-grid {
         grid-template-columns: 1fr;
+    }
+
+    .barbeiros-cards {
+    grid-template-columns: 1fr;
     }
 }
 
@@ -119,5 +203,9 @@ body {
 
     .secao-servicos-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .barbeiros-cards {
+    grid-template-columns: repeat(2, 1fr);
     }
 }
