@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contato.css') }}">
     <title>Barbertime</title>
     {% block head %}
     {% endblock %}
@@ -15,7 +16,7 @@
         <div class="navbar-container">
             
             <div class="navbar-logo">
-                <a href="#">Barbearia Elite</a>
+                <a href="/">Barbearia Elite</a>
             </div>
 
             <input type="checkbox" id="menu-toggle" class="menu-checkbox">
@@ -31,10 +32,10 @@
 
             <nav class="navbar-menu">
                 <ul>
-                    <li><a href="#">Início</a></li>
+                    <li><a href="/" class="{% if pagina_ativa == 'home' %}active{% endif %}">Início</a></li>
                     <li><a href="#">Serviços</a></li>
                     <li><a href="#">Barbeiros</a></li>
-                    <li><a href="#">Contato</a></li>
+                    <li><a href="/contato" class="{% if pagina_ativa == 'contato' %}active{% endif %}">Contato</a></li>
                 </ul>
             </nav>
 
@@ -86,7 +87,7 @@
                 <a href="">Serviços</a>
                 <a href="">Barbeiros</a>
                 <a href="">Agendar</a>
-                <a href="">Contato</a>
+                <a href="/contato">Contato</a>
 
             </div>
 

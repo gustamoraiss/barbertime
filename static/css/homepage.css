@@ -454,6 +454,7 @@
 .btn-agendar-cpa:hover {
     background-color: var(--cor-preto);
     transform: translateY(-2px); 
+    cursor: pointer;
 }
 
 .btn-agendar-cpa:active {
