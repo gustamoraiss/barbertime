@@ -20,7 +20,7 @@ body {
 }
 
 .secao-servicos {
-    margin-bottom: 2em;
+    margin-bottom: 3em;
 }
 
 .secao-servicos-titulo {
@@ -81,7 +81,7 @@ body {
 }
 
 .secao-data {
-    margin-bottom: 2em;
+    margin-bottom: 3em;
 }
 
 .secao-data-titulo {
@@ -111,6 +111,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.75em;
+    margin-bottom: 3em;
 }
 
 .barbeiros-card-textos {
@@ -182,6 +183,52 @@ body {
     color: var(--cor-cinza-escuro);
 }
 
+.secao-horarios {
+  display: none;
+}
+
+.secao-barbeiros:has(input[type="radio"]:checked) ~ .secao-horarios {
+  display: block;
+}
+
+.horarios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 12px;
+  max-width: 45%;
+  margin-top: 15px;
+}
+
+.btn-horario {
+  display: block;
+  text-align: center;
+  background-color: var(--cor-branco);
+  color: var(--cor-cinza-escuro);
+  border: 2px solid var(--cor-cinza-border);
+  border-radius: 6px;
+  padding: 12px 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  user-select: none; 
+}
+
+.btn-horario:hover {
+  border-color: var(--cor-cinza-escuro);
+  background-color: var(--cor-cinza-claro);
+  transform: translateY(-2px);
+}
+
+/* Quando o input escondido for marcado (+ significa: selecione a label logo após ele) */
+.horarios-grid .input-escondido:checked + .btn-horario {
+  background-color: var(--cor-amarelo-selecionado);
+  color: var(--cor-cinza-escuro);            
+  border-color: var(--cor-amarelo);          
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(0);
+}
+
 @media (max-width: 768px) {
     .agendamento {
         margin: 2em;
@@ -193,6 +240,10 @@ body {
 
     .barbeiros-cards {
     grid-template-columns: 1fr;
+    }
+
+    .horarios-grid {
+        max-width: 100%;
     }
 }
 
@@ -207,5 +258,9 @@ body {
 
     .barbeiros-cards {
     grid-template-columns: repeat(2, 1fr);
+    }
+
+    .horarios-grid {
+        max-width: 100%;
     }
 }
