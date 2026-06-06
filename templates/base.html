@@ -32,10 +32,10 @@
 
             <nav class="navbar-menu">
                 <ul>
-                    <li><a href="/" class="{% if pagina_ativa == 'home' %}active{% endif %}">Início</a></li>
+                    <li><a href="/" class="{{ 'active' if request.path == '/' else '' }}">Início</a></li>
                     <li><a href="#">Serviços</a></li>
                     <li><a href="#">Barbeiros</a></li>
-                    <li><a href="/contato" class="{% if pagina_ativa == 'contato' %}active{% endif %}">Contato</a></li>
+                    <li><a href="/contato" class="{{ 'active' if request.path == '/contato' else '' }}">Contato</a></li>
                 </ul>
             </nav>
 
