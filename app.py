@@ -13,5 +13,9 @@ def base():
 def contato():
     return render_template('contato.html', pagina_ativa='contato')
 
+@app.route('/agendamento')
+def agendamento():
+    return render_template('agendamento.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
