@@ -5,7 +5,6 @@ Sistema web de agendamento para barbearias desenvolvido com Flask, HTML e CSS.
 ## Funcionalidades
 - Agendamento de horários
 - Visualização de serviços
-- Cadastro de clientes
 - Organização da agenda dos barbeiros
 
 ## Tecnologias
