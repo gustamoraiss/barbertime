@@ -1,17 +1,13 @@
-from flask import Flask, render_template
+from flask import Flask
+from routes.main import main_bp
+from routes.scheduling import scheduling_bp
+from routes.contact import contact_bp
+
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return render_template('index.html', pagina_ativa='home')
-
-@app.route('/base')
-def base():
-    return render_template('base.html', pagina_ativa='base')
-
-@app.route('/contato')
-def contato():
-    return render_template('contato.html', pagina_ativa='contato')
+app.register_blueprint(main_bp)
+app.register_blueprint(scheduling_bp)
+app.register_blueprint(contact_bp)
 
 if __name__ == '__main__':
     app.run(debug=True)
