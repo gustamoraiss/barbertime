@@ -30,6 +30,7 @@
 
 .btn-agendar-header {
     background-color: var(--cor-amarelo);
+    font-family: var(--fonte-texto);
     color: var(--cor-branco);
     font-weight: bold;
     border: none;
