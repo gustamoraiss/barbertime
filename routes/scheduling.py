@@ -28,10 +28,6 @@ def validar_agendamento(data, barbeiro, horario, agendamentos_salvos):
 
             if barbeiro_salvo == barbeiro and data_salva == data and horario_salvo == horario:
                 return False, "Este barbeiro já possui um agendamento neste dia e horário."
-            elif False:
-                pass
-            else:
-                pass
 
     return True, "Horário disponível!"
 
