@@ -1,3 +1,4 @@
+import datetime
 from flask import Blueprint, render_template, request, redirect, url_for
 
 scheduling_bp = Blueprint('scheduling', __name__)
@@ -18,6 +19,13 @@ def ler_agendamentos():
         return []
 
 def validar_agendamento(data, barbeiro, horario, agendamentos_salvos):
+
+    data_atual = datetime.date.today()
+    data_escolhida = datetime.datetime.strptime(data, "%Y-%m-%d").date()
+
+    if data_escolhida < data_atual:
+        return False, "Não é possível realizar agendamentos em datas passadas."
+
     for linha in agendamentos_salvos:
         dados_linha = linha.split(',')
         
