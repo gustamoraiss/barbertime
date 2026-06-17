@@ -18,7 +18,7 @@ def ler_agendamentos():
     except FileNotFoundError:
         return []
 
-def validar_agendamento(data, barbeiro, horario, nome, agendamentos_salvos):
+def validar_agendamento(data, barbeiro, horario, nome, telefone, agendamentos_salvos):
 
     data_atual = datetime.date.today()
     data_escolhida = datetime.datetime.strptime(data, "%Y-%m-%d").date()
@@ -30,6 +30,12 @@ def validar_agendamento(data, barbeiro, horario, nome, agendamentos_salvos):
 
     if not nome_sem_espacos.isalpha():
         return False, "O nome informado deve conter apenas letras e espaços."
+    
+    if not telefone.isdigit():
+        return False, "O telefone informado deve conter apenas números."
+    
+    elif len(telefone) < 10 or len(telefone) > 11:
+        return False, "O telefone informado deve conter 10 ou 11 dígitos."
 
     for linha in agendamentos_salvos:
         dados_linha = linha.split(',')
@@ -63,7 +69,7 @@ def agendamento():
         
         agendamentos_salvos = ler_agendamentos()
         
-        valido, mensagem = validar_agendamento(data, barbeiro, horario, nome, agendamentos_salvos)
+        valido, mensagem = validar_agendamento(data, barbeiro, horario, nome, telefone, agendamentos_salvos)
         
         if valido:
             salvar_agendamento(servico, data, barbeiro, horario, nome, telefone)
