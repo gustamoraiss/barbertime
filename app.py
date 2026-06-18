@@ -3,6 +3,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from routes.main import main_bp
 from routes.scheduling import scheduling_bp
 from routes.contact import contact_bp
+from routes.scheduling_menager import limpar_agendamentos_expirados
 
 app = Flask(__name__)
 
@@ -10,12 +11,9 @@ app.register_blueprint(main_bp)
 app.register_blueprint(scheduling_bp)
 app.register_blueprint(contact_bp)
 
-def rotina_temporaria():
-    pass
-
 scheduler = BackgroundScheduler()
 
-scheduler.add_job(rotina_temporaria, 'interval', minutes=15, id='limpeza_csv_job')
+scheduler.add_job(limpar_agendamentos_expirados, 'interval', minutes=15)
 
 scheduler.start()
 
