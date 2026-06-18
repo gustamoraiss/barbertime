@@ -22,11 +22,10 @@ def validar_agendamento(data, barbeiro, horario, nome, telefone, agendamentos_sa
 
     data_atual = datetime.date.today()
     data_escolhida = datetime.datetime.strptime(data, "%Y-%m-%d").date()
+    nome_sem_espacos = nome.replace(" ", "")
 
     if data_escolhida < data_atual:
         return False, "Não é possível realizar agendamentos em datas passadas."
-
-    nome_sem_espacos = nome.replace(" ", "")
 
     if not nome_sem_espacos.isalpha():
         return False, "O nome informado deve conter apenas letras e espaços."
