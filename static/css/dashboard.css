@@ -1,0 +1,195 @@
+/* Configurações da Página */
+.dashboard-secao {
+    width: 100%;
+    max-width: 120rem;
+    margin: 4.3rem auto;
+    padding: 0 2rem;
+    font-family: var(--fonte-principal);
+    min-height: 60vh;
+    box-sizing: border-box;
+}
+
+/* Área do Título Principal */
+.dashboard-header {
+    margin-bottom: 3.5rem;
+    text-align: left;
+}
+
+.dashboard-titulo-principal {
+    font-size: 2.5rem;
+    color: var(--cor-cinza-escuro);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin: 0 0 12px 0;
+}
+
+.dashboard-linha-decorativa {
+    width: 100px;
+    height: 6px;
+    background-color: var(--cor-preto); 
+    border-radius: 10px;
+}
+
+/* Grid Organizador */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.card-premium {
+    background: var(--cor-branco);
+    border: 1px solid var(--cor-cinza-border);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+}
+
+.card-premium:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-color: var(--cor-cinza-hover);
+}
+
+.card-premium-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    min-height: 4rem;
+    gap: 1rem;
+}
+
+.badge-servico-tag {
+    background: var(--cor-preto);
+    color: var(--cor-branco);
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-badge {
+    font-size: 0.8rem;
+    color: var(--cor-verde);
+    font-weight: 600;
+    background: var(--cor-verde-claro);
+    padding: 4px 10px;
+    border-radius: 8px;
+}
+
+.card-premium-body {
+    margin-bottom: 2rem;
+}
+
+.cliente-nome-detalhe {
+    font-size: 1.35rem;
+    color: #1f2937;
+    margin: 0 0 6px 0;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cliente-nome-detalhe i {
+    color: var(--cor-cinza-icone);
+}
+
+.cliente-fone-detalhe {
+    font-size: 0.95rem;
+    color: var(--cor-cinza-icone);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cliente-fone-detalhe i {
+    color: var(--cor-cinza-icone);
+}
+
+/* Linha Divisória Minimalista */
+.card-premium-divisor {
+    height: 1px;
+    background: var(--cor-cinza-border);
+    margin-bottom: 1.5rem;
+}
+
+.card-premium-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-label {
+    font-size: 0.7rem;
+    color: var(--cor-cinza-icone);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.info-valor {
+    font-size: 1rem;
+    color: var(--cor-cinza-escuro);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.info-valor i {
+    color: var(--cor-cinza-icone);
+}
+
+.data-destaque {
+    color: var(--cor-cinza-escuro);
+    font-weight: 700;
+}
+
+.dashboard-estado-vazio {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 80px 20px;
+    border: 2px dashed var(--cor-cinza-border);
+    border-radius: 16px;
+    color: var(--cor-cinza-icone);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-estado-vazio i {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    color: var(--cor-cinza-icone);
+    opacity: 0.6;
+}
+
+.dashboard-estado-vazio h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+    color: var(--cor-cinza-escuro);
+}
+
+.dashboard-estado-vazio p {
+    font-size: 1rem;
+    margin: 0;
+    color: var(--cor-cinza-icone);
+}
