@@ -33,8 +33,7 @@
             <nav class="navbar-menu">
                 <ul>
                     <li><a href="/" class="{{ 'active' if request.path == '/' else '' }}">Início</a></li>
-                    <li><a href="#">Serviços</a></li>
-                    <li><a href="#">Barbeiros</a></li>
+                    <li><a href="/dashboard" class="{{ 'active' if request.path == '/dashboard' else '' }}">Agendamentos</a></li>
                     <li><a href="/contato" class="{{ 'active' if request.path == '/contato' else '' }}">Contato</a></li>
                 </ul>
             </nav>
@@ -86,7 +85,7 @@
                 <h3>Links Rápidos</h3>
                 <a href="">Serviços</a>
                 <a href="">Barbeiros</a>
-                <a href="">Agendar</a>
+                <a href="/dashboard">Agendamentos</a>
                 <a href="/contato">Contato</a>
 
             </div>
