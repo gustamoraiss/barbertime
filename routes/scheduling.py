@@ -5,17 +5,15 @@ scheduling_bp = Blueprint('scheduling', __name__)
 CSV_PATH = "data/agendamentos.csv"
 
 def ler_agendamentos():
-    linhas = []
-    try:
-        with open(CSV_PATH, 'r') as arquivo:
+    arquivo = open(CSV_PATH, mode='r', encoding='utf-8')
+    
+    linhas = arquivo.readlines()
+    
+    arquivo.close()
+    
+    linhas_limpas = [linha.strip() for linha in linhas]
 
-            linhas = arquivo.readlines()
-            linhas_limpas = [linha.strip() for linha in linhas]
-            
-            return linhas_limpas
-        
-    except FileNotFoundError:
-        return []
+    return linhas_limpas
 
 def validar_agendamento(data, barbeiro, horario, agendamentos_salvos):
     for linha in agendamentos_salvos:
@@ -34,8 +32,11 @@ def validar_agendamento(data, barbeiro, horario, agendamentos_salvos):
 def salvar_agendamento(servico, data, barbeiro, horario, nome, telefone):
     novo_agendamento = f"{servico},{data},{barbeiro},{horario},{nome},{telefone}\n"
     
-    with open(CSV_PATH, mode='a') as arquivo:
-        arquivo.write(novo_agendamento)
+    arquivo = open(CSV_PATH, mode='a', encoding='utf-8')
+    
+    arquivo.write(novo_agendamento)
+    
+    arquivo.close()
 
 @scheduling_bp.route('/agendar', methods=['GET', 'POST'])
 def agendamento():
