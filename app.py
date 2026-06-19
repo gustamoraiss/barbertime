@@ -13,7 +13,7 @@ app.register_blueprint(contact_bp)
 
 scheduler = BackgroundScheduler()
 
-scheduler.add_job(limpar_agendamentos_expirados, 'interval', minutes=15)
+scheduler.add_job(limpar_agendamentos_expirados, 'interval', minutes=10)
 
 scheduler.start()
 
