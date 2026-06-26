@@ -90,7 +90,6 @@ def agendamento():
         
         agendamentos_salvos = ler_agendamentos()
         
-        # CORREÇÃO AQUI: Passando as variáveis 'nome' e 'telefone' que faltavam!
         valido, mensagem = validar_agendamento(data, barbeiro, horario, nome, telefone, agendamentos_salvos)
         
         if valido:
