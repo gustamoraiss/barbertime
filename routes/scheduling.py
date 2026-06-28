@@ -1,3 +1,4 @@
+import datetime
 from flask import Blueprint, render_template, request, redirect, url_for
 
 scheduling_bp = Blueprint('scheduling', __name__)
@@ -17,7 +18,27 @@ def ler_agendamentos():
     except FileNotFoundError:
         return []
 
-def validar_agendamento(data, barbeiro, horario, agendamentos_salvos):
+def validar_agendamento(data, barbeiro, horario, nome, telefone, agendamentos_salvos):
+
+    data_atual = datetime.date.today()
+    data_escolhida = datetime.datetime.strptime(data, "%Y-%m-%d").date()
+    nome_sem_espacos = nome.replace(" ", "")
+
+    if data_escolhida < data_atual:
+        return False, "Não é possível realizar agendamentos em datas passadas."
+
+    if not nome_sem_espacos.isalpha():
+        return False, "O nome informado deve conter apenas letras e espaços."
+    
+    if len(nome_sem_espacos) < 3:
+        return False, "O nome informado deve conter pelo menos 3 caracteres."
+    
+    if not telefone.isdigit():
+        return False, "O telefone informado deve conter apenas números."
+    
+    elif len(telefone) != 11:
+        return False, "O telefone informado deve conter 11 dígitos."
+
     for linha in agendamentos_salvos:
         dados_linha = linha.split(',')
         
@@ -50,7 +71,7 @@ def agendamento():
         
         agendamentos_salvos = ler_agendamentos()
         
-        valido, mensagem = validar_agendamento(data, barbeiro, horario, agendamentos_salvos)
+        valido, mensagem = validar_agendamento(data, barbeiro, horario, nome, telefone, agendamentos_salvos)
         
         if valido:
             salvar_agendamento(servico, data, barbeiro, horario, nome, telefone)
