@@ -30,11 +30,14 @@ def validar_agendamento(data, barbeiro, horario, nome, telefone, agendamentos_sa
     if not nome_sem_espacos.isalpha():
         return False, "O nome informado deve conter apenas letras e espaços."
     
+    if len(nome_sem_espacos) < 3:
+        return False, "O nome informado deve conter pelo menos 3 caracteres."
+    
     if not telefone.isdigit():
         return False, "O telefone informado deve conter apenas números."
     
-    elif len(telefone) < 10 or len(telefone) > 11:
-        return False, "O telefone informado deve conter 10 ou 11 dígitos."
+    elif len(telefone) != 11:
+        return False, "O telefone informado deve conter 11 dígitos."
 
     for linha in agendamentos_salvos:
         dados_linha = linha.split(',')
