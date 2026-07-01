@@ -4,6 +4,7 @@ from routes.main import main_bp
 from routes.scheduling import scheduling_bp
 from routes.contact import contact_bp
 from routes.dashboard import dashboard_bp
+from routes.scheduling_menager import limpar_agendamentos_expirados
 
 app = Flask(__name__)
 app.secret_key = 'chave_secreta_aqui'
