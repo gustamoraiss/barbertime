@@ -11,9 +11,6 @@ def dashboard():
     
     for linha in linhas_csv:
         linha_limpa = linha.strip()
-        
-        if not linha_limpa:
-            continue
             
         dados = [d.strip() for d in linha_limpa.split(',')]
         
@@ -27,12 +24,8 @@ def dashboard():
                 "telefone": dados[5]
             }
             
-            try:
-                data_hora_str = f"{dados[1]} {dados[3]}"
-                agendamento_dict["datetime_obj"] = datetime.strptime(data_hora_str, "%Y-%m-%d %H:%M")
-            except ValueError:
-                agendamento_dict["datetime_obj"] = datetime.max
-                
+            data_hora_str = f"{dados[1]} {dados[3]}"
+            agendamento_dict["datetime_obj"] = datetime.strptime(data_hora_str, "%Y-%m-%d %H:%M")
             agendamentos_reais.append(agendamento_dict)
             
     agendamentos_reais.sort(key=lambda x: x["datetime_obj"])
