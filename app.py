@@ -3,13 +3,15 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from routes.main import main_bp
 from routes.scheduling import scheduling_bp
 from routes.contact import contact_bp
-from routes.scheduling_menager import limpar_agendamentos_expirados
+from routes.dashboard import dashboard_bp
 
 app = Flask(__name__)
+app.secret_key = 'chave_secreta_aqui'
 
 app.register_blueprint(main_bp)
 app.register_blueprint(scheduling_bp)
 app.register_blueprint(contact_bp)
+app.register_blueprint(dashboard_bp)
 
 scheduler = BackgroundScheduler()
 

@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/agendamento.css') }}">
+{% endblock %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <input type="checkbox" id="alerta-toggle" class="alerta-checkbox" checked>
+            <div class="modal-alerta-container">
+                <div class="card-alerta-popup {{ category }}">
+                    <label for="alerta-toggle" class="btn-fechar-alerta">&times;</label>
+                    <div class="alerta-conteudo">
+                        {% if category == 'error' %}
+                            <i class="fa-solid fa-calendar-xmark alerta-icone icone-erro"></i>
+                            <h3>Horário Indisponível</h3>
+                            <p>{{ message }}</p>
+                            <label for="alerta-toggle" class="btn-entendido btn-erro">Voltar</label>
+                        {% else %}
+                            <i class="fa-solid fa-calendar-check alerta-icone icone-sucesso"></i>
+                            <h3>Agendamento Concluído!</h3>
+                            <p>{{ message }}</p>
+                            <label for="alerta-toggle" class="btn-entendido btn-sucesso">Excelente!</label>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<div class="dashboard-secao">
+    <div class="dashboard-header">
+        <h1 class="dashboard-titulo-principal">Agendamentos Marcados</h1>
+        <div class="dashboard-linha-decorativa"></div>
+    </div>
+
+    <div class="dashboard-grid">
+        
+        {% set total_cards = namespace(valor=0) %}
+
+        {% for agendamento in agendamentos %}
+            {% if agendamento.nome and agendamento.nome.strip() != '' and agendamento.nome.lower() != 'nome' and agendamento.servico.lower() != 'serviço' %}
+                
+                {% set total_cards.valor = total_cards.valor + 1 %}
+                
+                <div class="card-premium">
+                    <div class="card-premium-header">
+                        <span class="badge-servico-tag">{{ agendamento.servico }}</span>
+                        <span class="status-badge"><i class="fa-solid fa-clock-rotate-left"></i> Confirmado</span>
+                    </div>
+                    
+                    <div class="card-premium-body">
+                        <h3 class="cliente-nome-detalhe">
+                            <i class="fa-solid fa-user-tie"></i> {{ agendamento.nome }}
+                        </h3>
+                        <p class="cliente-fone-detalhe">
+                            <i class="fa-solid fa-phone"></i> {{ agendamento.telefone }}
+                        </p>
+                    </div>
+                    
+                    <div class="card-premium-divisor"></div>
+                    
+                    <div class="card-premium-footer">
+                        <div class="info-item">
+                            <span class="info-label">PROFISSIONAL</span>
+                            <span class="info-valor"><i class="fa-solid fa-scissors"></i> {{ agendamento.barbeiro }}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">AGENDADO PARA</span>
+                            <span class="info-valor data-destaque"><i class="fa-solid fa-calendar-days"></i> {{ agendamento.data }} às {{ agendamento.horario }}</span>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        {% if total_cards.valor == 0 %}
+            <div class="dashboard-estado-vazio">
+                <i class="fa-solid fa-calendar-xmark"></i>
+                <h3>Nenhum agendamento pendente</h3>
+                <p>O painel está limpo.</p>
+            </div>
+        {% endif %}
+
+    </div>
+</div>
+
+{% endblock %}
