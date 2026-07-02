@@ -123,7 +123,7 @@ O diagrama abaixo apresenta as principais funcionalidades disponibilizadas ao us
 
 # 🏗️ Arquitetura do Projeto
 
-A arquitetura da aplicação foi organizada seguindo a estrutura recomendada pelo Flask, separando as responsabilidades entre rotas, templates, arquivos estáticos e camada de persistência de dados.
+A arquitetura da aplicação foi organizada seguindo a estrutura MVC.
 
 <p align="center">
     <img src="docs/images/arquitetura.png" alt="Arquitetura do Projeto" width="900">
