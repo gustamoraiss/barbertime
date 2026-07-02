@@ -1,8 +1,3 @@
-/* ==========================================================================
-   PÁGINA DE CONTATO/INFORMAÇÕES - CSS UNIFICADO E FLUIDO
-   ========================================================================== */
-
-/* Layout Base e Container Principal */
 .contato-main {
     max-width: 1400px;
     margin: 0 auto;
@@ -28,9 +23,6 @@
     opacity: 0.8;
 }
 
-/* O Grid Principal de 2 Colunas.
-   O 'align-items: stretch' garante que ambos os cards tenham SEMPRE a mesma altura.
-*/
 .contato-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -39,9 +31,6 @@
     align-items: stretch; 
 }
 
-/* ==========================================================================
-   ESTILIZAÇÃO DOS CARDS (Esquerdo e Direito)
-   ========================================================================== */
 .contato-info-card, 
 .contato-form-card {
     background-color: var(--cor-branco);
@@ -62,11 +51,6 @@
     font-family: var(--fonte-principal);
 }
 
-/* ==========================================================================
-   BLOCO DE INFORMAÇÕES (Lado Esquerdo - Fluido)
-   ========================================================================== */
-
-/* Container dos três itens superiores (Telefone, Email, Endereço) */
 .info-itens-container {
     display: flex;
     flex-direction: column;
@@ -91,7 +75,7 @@
     align-items: center;
     justify-content: center;
     font-size: 1.1rem;
-    flex-shrink: 0; /* Impede o círculo do ícone de deformar */
+    flex-shrink: 0;
 }
 
 .info-texto {
@@ -119,7 +103,6 @@
     margin-top: 0.2rem;
 }
 
-/* Tabela de Horários Ocupando Toda a Largura disponível */
 .tabela-horarios {
     width: 100%; 
     border-collapse: collapse;
@@ -151,11 +134,8 @@
     font-weight: bold;
 }
 
-/* ==========================================================================
-   BOTÕES DE REDES SOCIAIS (Estilo Retangular Suave)
-   ========================================================================== */
 .contato-redes {
-    margin-top: auto; /* Empurra a seção de redes para o rodapé do card, alinhando com o outro lado */
+    margin-top: auto;
     border-top: 1px solid rgba(0, 0, 0, 0.08);
     padding-top: 1.5rem;
 }
@@ -207,78 +187,16 @@
     font-weight: 500;
 }
 
-/* ==========================================================================
-   FORMULÁRIO DE CONTATO (Lado Direito)
-   ========================================================================== */
-.formulario-contato {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    flex-grow: 1; /* Faz o form preencher o espaço vertical gerado pelo stretch */
-}
-
-.grupo-input {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-}
-
-.grupo-input label {
-    font-size: 0.95rem;
-    font-weight: bold;
-    color: var(--cor-preto);
-}
-
-.grupo-input input, 
-.grupo-input textarea {
-    background-color: var(--cor-cinza-claro);
-    border: 1px solid var(--cor-cinza-border);
-    border-radius: 0.5rem;
-    padding: 0.75rem 1rem;
-    font-family: inherit;
-    font-size: 0.95rem;
-    color: var(--cor-preto);
-    transition: all 0.3s;
-}
-
-.grupo-input input:focus, 
-.grupo-input textarea:focus {
-    outline: none;
-    border-color: var(--cor-amarelo);
-    background-color: var(--cor-branco);
-}
-
-.btn-enviar-mensagem {
-    background-color: var(--cor-amarelo);
-    color: var(--cor-branco);
-    font-weight: bold;
-    font-size: 1rem;
-    border: none;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    margin-top: auto; /* Cola o botão exatamente na base do card */
-    transition: all 0.3s;
-}
-
-.btn-enviar-mensagem:hover {
-    background-color: var(--cor-amarelo-hover);
-    transform: translateY(-1px);
-}
-
-.btn-enviar-mensagem:active {
-    background-color: var(--cor-amarelo);
-    transform: translateY(1px) scale(0.98);
-}
-
-/* Seção do Google Maps */
 .contato-mapa {
     width: 100%;
-    height: 450px;
+    height: 100%; 
+    min-height: 450px; 
     border-radius: 1rem;
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.08);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    display: flex; 
+    flex: 1; 
 }
 
 .contato-mapa iframe {
@@ -287,13 +205,7 @@
     border: none;
 }
 
-/* ==========================================================================
-   RESPONSIVIDADE (MEDIA QUERIES)
-   ========================================================================== */
-
-/* Quando a tela chega em tamanho Tablet */
 @media (min-width: 650px) {
-    /* Faz os 3 itens superiores se distribuírem lado a lado quando houver espaço */
     .info-itens-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -301,12 +213,11 @@
     }
 }
 
-/* Quando quebra para visualização Mobile */
 @media (max-width: 940px) {
     .contato-grid {
-        grid-template-columns: 1fr; /* Um card vira topo do outro */
+        grid-template-columns: 1fr; 
         gap: 2.5rem;
-        align-items: start; /* Cancela o stretch vertical já que estão empilhados */
+        align-items: start;
     }
 
     .contato-main {

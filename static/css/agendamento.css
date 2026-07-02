@@ -4,6 +4,7 @@ body {
     background-color: var(--cor-cinza-claro);
     box-sizing: border-box;
 }
+
 .alerta-checkbox {
     display: none;
 }
@@ -114,7 +115,6 @@ body {
     background-color: var(--cor-verde);
 }
 
-/* Adicione isso no final do seu arquivo agendamento.css */
 .input-campo-texto:focus {
     outline: none;
     border-color: var(--cor-amarelo);
@@ -247,7 +247,6 @@ body {
     gap: 1.5em;
 }
 
-
 .card-barbeiro {
     display: flex;
     flex-direction: column;
@@ -260,7 +259,6 @@ body {
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 
 .card-barbeiro:hover {
     border-color: var(--cor-amarelo);
@@ -379,7 +377,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* Quando o input escondido for marcado (+ significa: selecione a label logo após ele) */
 .horarios-grid .input-escondido:checked + .btn-horario {
   background-color: var(--cor-amarelo-selecionado);
   color: var(--cor-cinza-escuro);            
@@ -388,13 +385,8 @@ body {
   transform: translateY(0);
 }
 
-/* ==========================================================================
-   CONTROLE DO BOTÃO DE ENVIO
-   ========================================================================== */
-
-/* 1. Estado Inicial Padrão: Oculto, cinza e inclicável */
 .btn-enviar-agendamento {
-    display: none; /* Oculto inicialmente */
+    display: none; 
     width: 100%;
     padding: 1.2em;
     font-size: 1.1rem;
@@ -405,35 +397,25 @@ body {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    
-    /* Cores do estado inclicável (cinza) */
     background-color: var(--cor-cinza-border);
     color: var(--cor-cinza-escuro);
-    
-    /* Desabilita qualquer clique ou evento do mouse no CSS */
     pointer-events: none; 
     user-select: none;
     transition: all 0.3s ease;
 }
 
-/* 2. Regra de Visibilidade: Mostra o botão apenas quando o barbeiro for escolhido */
 .agendamento:has(input[name="barbeiro"]:checked) .btn-enviar-agendamento {
     display: block;
 }
 
-/* 3. Estado Ativo/Habilitado: Quando TODO o formulário for válido (Tudo respondido) */
 .agendamento:valid .btn-enviar-agendamento {
-    /* Muda para a cor laranja */
     background-color: var(--cor-amarelo); 
     color: var(--cor-branco);
-    
-    /* Reativa os cliques do mouse */
     pointer-events: auto; 
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(255, 106, 0, 0.3);
 }
 
-/* Efeitos visuais de hover apenas quando o botão já estiver laranja/clicável */
 .agendamento:valid .btn-enviar-agendamento:hover {
     background-color: var(--cor-amarelo-hover);
     transform: translateY(-2px);
@@ -472,34 +454,27 @@ body {
     }
 }
 
-/* Quando a tela for de 810px ou menos */
 @media (max-width: 810px) {
-    /* 1. Força os blocos de Horário e Dados ficarem um abaixo do outro */
     .secao-barbeiros:has(input[name="barbeiro"]:checked) ~ .secao-horarios-e-cliente {
         display: flex;
         flex-direction: column;
         gap: 2.5em;
     }
 
-    /* 2. Remove a limitação de 50% de largura de ambas as seções */
     .secao-horarios,
     .secao-identificacao-cliente {
         width: 100%;
         min-width: 100%;
     }
 
-    /* 3. Ajusta o Grid para se espalhar por toda a largura disponível */
     .horarios-grid {
         display: grid;
         width: 100%;
         max-width: 100%;
-        
-        /* O auto-fit faz os botões preencherem as lacunas sozinhas expandindo as colunas */
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
         gap: 12px;
     }
 
-    /* 4. Garante que as labels/botões preencham o espaço esticado do grid */
     .btn-horario {
         width: 100%;
     }
@@ -517,6 +492,7 @@ body {
     .barbeiros-cards {
     grid-template-columns: repeat(2, 1fr);
     }
+    
 
     .horarios-grid {
         max-width: 100%;

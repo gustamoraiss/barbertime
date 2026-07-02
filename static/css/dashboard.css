@@ -1,4 +1,3 @@
-/* Configurações da Página */
 .dashboard-secao {
     width: 100%;
     max-width: 120rem;
@@ -9,7 +8,6 @@
     box-sizing: border-box;
 }
 
-/* Área do Título Principal */
 .dashboard-header {
     margin-bottom: 3.5rem;
     text-align: left;
@@ -30,7 +28,6 @@
     border-radius: 10px;
 }
 
-/* Grid Organizador */
 .dashboard-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -117,7 +114,6 @@
     color: var(--cor-cinza-icone);
 }
 
-/* Linha Divisória Minimalista */
 .card-premium-divisor {
     height: 1px;
     background: var(--cor-cinza-border);

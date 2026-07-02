@@ -103,13 +103,9 @@
 .menu-checkbox { display: none; }
 .menu-icones { display: none; cursor: pointer; }
 
-/* ==========================================
-   FOOTER (RODAPÉ)
-   ========================================== */
 footer {
     width: 100%;
     background-color: var(--cor-preto);
-    /* Removido o position absolute para evitar que o rodapé flutue sobre o conteúdo */
 }
 
 .footer-conteiner {
@@ -189,7 +185,7 @@ footer {
 .footer-resto p i {
     color: var(--cor-amarelo);
     margin-right: 10px;
-    font-size: 1rem; /* Corrigido o espaço: "1 rem" para "1rem" */
+    font-size: 1rem;
     width: 20px;
     text-align: center;
 }
@@ -215,8 +211,8 @@ footer {
 
 .footer-copyright {
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    margin: auto; /* 2rem acima, 0 nas laterais e abaixo */
-    padding: 1.5rem 0;  /* Espaço interno controlado para respirar */
+    margin: auto;
+    padding: 1.5rem 0;
     text-align: center;
     width: 100%;
 }
@@ -255,9 +251,6 @@ footer {
     }
 }
 
-/* ==========================================
-   MEDIA QUERIES (RESPONSIVIDADE)
-   ========================================== */
 @media (max-width: 940px) {
     .navbar-menu {
         margin: 0;
